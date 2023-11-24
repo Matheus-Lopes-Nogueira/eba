@@ -1,0 +1,37 @@
+﻿@model eba.Models.inventario
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>inventario</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.idcliente)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idcliente)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.idmaquina)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idmaquina)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.qtvalor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.qtvalor)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.idinventario">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

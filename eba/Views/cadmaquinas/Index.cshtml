@@ -1,0 +1,54 @@
+﻿@model IEnumerable<eba.Models.cadmaquinas>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nomemaquina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.patrimonio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.memoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hd)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomemaquina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.patrimonio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.memoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hd)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.idmaquina">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.idmaquina">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.idmaquina">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

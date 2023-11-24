@@ -1,0 +1,49 @@
+﻿@model eba.Models.cadmaquinas
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>cadmaquinas</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="nomemaquina" class="control-label"></label>
+                <input asp-for="nomemaquina" class="form-control" />
+                <span asp-validation-for="nomemaquina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="patrimonio" class="control-label"></label>
+                <input asp-for="patrimonio" class="form-control" />
+                <span asp-validation-for="patrimonio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="memoria" class="control-label"></label>
+                <input asp-for="memoria" class="form-control" />
+                <span asp-validation-for="memoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hd" class="control-label"></label>
+                <input asp-for="hd" class="form-control" />
+                <span asp-validation-for="hd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
